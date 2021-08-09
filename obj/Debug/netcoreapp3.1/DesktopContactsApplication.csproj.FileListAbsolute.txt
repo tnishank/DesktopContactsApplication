@@ -37,3 +37,5 @@ C:\Users\Nishank Tripathi\source\repos\DesktopContactsApplication\bin\Debug\netc
 C:\Users\Nishank Tripathi\source\repos\DesktopContactsApplication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Nishank Tripathi\source\repos\DesktopContactsApplication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Nishank Tripathi\source\repos\DesktopContactsApplication\obj\Debug\netcoreapp3.1\DesktopContactsApplication.csproj.CopyComplete
+C:\Users\Nishank Tripathi\source\repos\DesktopContactsApplication\obj\Debug\netcoreapp3.1\ContactDetailsWindow.g.cs
+C:\Users\Nishank Tripathi\source\repos\DesktopContactsApplication\obj\Debug\netcoreapp3.1\ContactDetailsWindow.baml

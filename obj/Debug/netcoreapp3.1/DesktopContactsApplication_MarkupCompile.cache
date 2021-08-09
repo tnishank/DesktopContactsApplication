@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Nishank Tripathi\source\repos\DesktopContactsApplication\App.xaml
-2-1772605110
+3-1961996713
 
-5-994651099
+6272322217
 197820547452
-MainWindow.xaml;NewContactWindow.xaml;
+ContactDetailsWindow.xaml;MainWindow.xaml;NewContactWindow.xaml;
 
 False
 

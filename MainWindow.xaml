@@ -10,6 +10,26 @@
         <StackPanel Margin="10">
             <Button Content="New Contact"
                     Click="Button_Click"/>
+            <TextBox Margin="0,5,0,5"
+                     TextChanged="TextBox_TextChanged"/>
+            <ListView x:Name="contactListView"
+                      SelectionChanged="contactListView_SelectionChanged"
+                      Height="280"
+                      Margin="0,0,0,5">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontSize="20"
+                                     FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Email}" FontSize="15"
+                                       Foreground="DodgerBlue"/>
+                            <TextBlock Text="{Binding Phone}" FontSize="15"
+                                       FontStyle="Italic"/>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
     </Grid>
 </Window>

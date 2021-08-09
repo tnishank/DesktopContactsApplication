@@ -22,9 +22,11 @@ namespace DesktopContactsApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Contact> contacts;
         public MainWindow()
         {
             InitializeComponent();
+            contacts = new List<Contact>();
             ReadDatabase();
         }
 
@@ -32,14 +34,52 @@ namespace DesktopContactsApplication
         {
             NewContactWindow newContactWindow = new NewContactWindow();
             newContactWindow.ShowDialog();
+            ReadDatabase();
         }
 
         public void ReadDatabase()
         {
+            
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
                 connection.CreateTable<Contact>();
-                var contacts = connection.Table<Contact>().ToList();
+                contacts = connection.Table<Contact>().ToList();
+            }
+
+            if(contacts != null)
+            {
+                /*foreach (var c in contacts)
+                {
+                    contactListView.Items.Add(new ListViewItem()
+                    {
+                        Content = c
+                    });
+                }*/
+                contactListView.ItemsSource = contacts;
+            }
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox searchItem = sender as TextBox;
+            //var filteredList = contacts.Where(c => c.Name.ToLower().Contains(searchItem.Text.ToLower())).ToList();
+            var filteredList = (from c in contacts
+                           where c.Name.ToLower().Contains(searchItem.Text.ToLower())
+                           orderby c.Name
+                           select c).ToList();
+            contactListView.ItemsSource = filteredList;
+        }
+
+        private void contactListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Contact contact = (Contact)contactListView.SelectedItem;
+
+            if(contact != null)
+            {
+                ContactDetailsWindow newContactWindow = new ContactDetailsWindow(contact);
+                newContactWindow.ShowDialog();
+                ReadDatabase();
             }
         }
     }

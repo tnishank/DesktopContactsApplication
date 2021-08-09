@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using DesktopContactsApplication.Classes;
 using SQLite;
 
+
 namespace DesktopContactsApplication
 {
     /// <summary>
@@ -38,8 +39,9 @@ namespace DesktopContactsApplication
             {
                 connection.CreateTable<Contact>();
                 connection.Insert(contact);
-            }    
+            }
             Close();
         }
+
     }
 }
